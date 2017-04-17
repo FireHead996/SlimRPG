@@ -1,13 +1,14 @@
 <?php
 
-use App\Middleware\AuthMiddleware\{UserMiddleware, GuestMiddleware};
+use App\Middleware\AuthMiddleware\UserMiddleware;
+use App\Middleware\AuthMiddleware\GuestMiddleware;
 
 // All access routes
 $app->get('/', 'IndexController:index')->setName('home');
 $app->get('/err', 'ErrorController:index')->setName('err');
 
 // Guest access routes
-$app->group('', function() {
+$app->group('', function () {
     // Sign up
     $this->get('/auth/signup', 'AuthController:getSignUp')->setName('auth.signup');
     $this->post('/auth/signup', 'AuthController:postSignUp');
@@ -18,7 +19,7 @@ $app->group('', function() {
 })->add(new GuestMiddleware($container));
 
 // User access routes
-$app->group('', function() {
+$app->group('', function () {
     // Logout
     $this->get('/auth/signout', 'AuthController:getSignOut')->setName('auth.signout');
 
