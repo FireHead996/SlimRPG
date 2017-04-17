@@ -1,7 +1,7 @@
 <?php
 
-use App\Middleware\AuthMiddleware\UserMiddleware;
 use App\Middleware\AuthMiddleware\GuestMiddleware;
+use App\Middleware\AuthMiddleware\UserMiddleware;
 
 // All access routes
 $app->get('/', 'IndexController:index')->setName('home');
