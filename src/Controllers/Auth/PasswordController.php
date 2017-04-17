@@ -2,10 +2,7 @@
 
 namespace App\Controllers\Auth;
 
-use App\Models\User;
-use App\Validation\Rules\EmailAvailable as EmailAvailable;
 use App\Controllers\Controller;
-use App\Validation\Validator;
 
 class PasswordController extends Controller
 {

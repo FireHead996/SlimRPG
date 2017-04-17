@@ -28,8 +28,9 @@ class PasswordValid implements RuleInterface
             return false;
         }
         
-        if (password_verify($value, $user->password))
-            return true;
+        if (password_verify($value, $user->password)) {
+                    return true;
+        }
 
         return false;
     }

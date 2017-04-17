@@ -22,7 +22,7 @@ class Validator extends v
             'name',
         ];
 
-        foreach($fields as $field)
+        foreach ($fields as $field)
         {
             $this->addField($field, $request->getParam($field));
             $this->addRule($field, new Rule\Required())->setMessage('To pole nie może być puste');
@@ -44,7 +44,7 @@ class Validator extends v
             'password',
         ];
 
-        foreach($fields as $field)
+        foreach ($fields as $field)
         {
             $this->addField($field, $request->getParam($field));
             $this->addRule($field, new Rule\Required())->setMessage('To pole nie może być puste');
@@ -64,7 +64,7 @@ class Validator extends v
             'password2',
         ];
 
-        foreach($fields as $field)
+        foreach ($fields as $field)
         {
             $this->addField($field, $request->getParam($field));
             $this->addRule($field, new Rule\Required())->setMessage('To pole nie może być puste');
