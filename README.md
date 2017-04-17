@@ -12,7 +12,7 @@
 Via Composer
 
 ```bash
-composer require firehead996/slimrpg
+composer create-project firehead996/slimrpg [my-app-name]
 ```
 
 [ico-version]: https://img.shields.io/packagist/v/FireHead996/SlimRPG.svg?style=flat-square
