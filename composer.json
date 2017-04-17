@@ -1,5 +1,6 @@
 {
     "name": "firehead996/slimrpg",
+    "version": "0.1.0",
     "type": "project",
     "description": "A Slim Framework based application for RPG game development",
     "keywords": ["rpg", "game", "gameengine"],
