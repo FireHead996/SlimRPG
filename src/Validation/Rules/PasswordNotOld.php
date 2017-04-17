@@ -20,11 +20,11 @@ class PasswordNotOld implements RuleInterface
         $user = User::find($_SESSION['user']);
         
         if (!$user) {
-                    return false;
+            return false;
         }
         
         if (!password_verify($value, $user->password)) {
-                    return true;
+            return true;
         }
 
         return false;
