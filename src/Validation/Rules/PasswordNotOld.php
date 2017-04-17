@@ -2,9 +2,9 @@
 
 namespace App\Validation\Rules;
 
-use App\Models\User;
 use Albert221\Validation\Rule\RuleInterface;
 use Albert221\Validation\Rule\RuleTrait as RuleTrait;
+use App\Models\User;
 
 class PasswordNotOld implements RuleInterface
 {
