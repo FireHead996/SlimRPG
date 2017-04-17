@@ -13,8 +13,7 @@ class PasswordController extends Controller
 
     public function postChangePassword($request, $response)
     {
-        if ($this->validator->validatePasswordChangeForm($request)->getErrorsCount() > 0)
-        {
+        if ($this->validator->validatePasswordChangeForm($request)->getErrorsCount() > 0) {
             $_SESSION['errors'] = $this->validator->getErrors();
             return $response->withRedirect($this->router->pathFor('auth.password.change'));
         }

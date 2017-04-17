@@ -26,8 +26,7 @@ class AuthController extends Controller
 
     public function postSignUp($request, $response)
     {
-        if ($this->validator->validateRegisterForm($request)->getErrorsCount() > 0)
-        {
+        if ($this->validator->validateRegisterForm($request)->getErrorsCount() > 0) {
             $_SESSION['errors'] = $this->validator->getErrors();
             return $response->withRedirect($this->router->pathFor('auth.signup'));
         }
@@ -47,8 +46,7 @@ class AuthController extends Controller
 
     public function postSignIn($request, $response)
     {
-        if ($this->validator->validateLoginForm($request)->getErrorsCount() > 0)
-        {
+        if ($this->validator->validateLoginForm($request)->getErrorsCount() > 0) {
             $_SESSION['errors'] = $this->validator->getErrors();
             return $response->withRedirect($this->router->pathFor('auth.signin'));
         }
@@ -58,8 +56,7 @@ class AuthController extends Controller
             $request->getParam('password')
         );
 
-        if (!$auth)
-        {
+        if (!$auth) {
             $this->flash->addMessage('danger', 'Podano błędne dane');
             return $response->withRedirect($this->router->pathFor('auth.signin'));
         }
