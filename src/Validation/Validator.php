@@ -24,14 +24,19 @@ class Validator extends v
 
         foreach ($fields as $field) {
             $this->addField($field, $request->getParam($field));
-            $this->addRule($field, new Rule\Required())->setMessage('To pole nie może być puste');
-            $this->addRule($field, new Rule\MinLength(3))->setMessage('Wartość tego pola nie może być krótsza niż 3');
-            $this->addRule($field, new Rule\MaxLength(25))->setMessage('Wartość tego pola nie może być dłuższa niż 25');
+            $this->addRule($field, new Rule\Required())
+                ->setMessage('To pole nie może być puste');
+            $this->addRule($field, new Rule\MinLength(3))
+                ->setMessage('Wartość tego pola nie może być krótsza niż 3');
+            $this->addRule($field, new Rule\MaxLength(25))
+                ->setMessage('Wartość tego pola nie może być dłuższa niż 25');
         }
 
-        $this->addRule('email', new Rule\Email())->setMessage('Wprowadź poprawny adres email');
+        $this->addRule('email', new Rule\Email())
+            ->setMessage('Wprowadź poprawny adres email');
         $this->addRule('email', new EmailAvailable());
-        //$this->addRule('name', new Rule\Alphanumeric())->setMessage('To pole przyjmuje tylko wartości alfanumeryczne');
+        //$this->addRule('name', new Rule\Alphanumeric())
+        //    ->setMessage('To pole przyjmuje tylko wartości alfanumeryczne');
 
         return $this->validate();
     }
@@ -45,7 +50,8 @@ class Validator extends v
 
         foreach ($fields as $field) {
             $this->addField($field, $request->getParam($field));
-            $this->addRule($field, new Rule\Required())->setMessage('To pole nie może być puste');
+            $this->addRule($field, new Rule\Required())
+                ->setMessage('To pole nie może być puste');
         }
 
         $this->addRule('email', new EmailOccupied());
@@ -64,14 +70,18 @@ class Validator extends v
 
         foreach ($fields as $field) {
             $this->addField($field, $request->getParam($field));
-            $this->addRule($field, new Rule\Required())->setMessage('To pole nie może być puste');
-            $this->addRule($field, new Rule\MinLength(3))->setMessage('Wartość tego pola nie może być krótsza niż 3');
-            $this->addRule($field, new Rule\MaxLength(25))->setMessage('Wartość tego pola nie może być dłuższa niż 25');
+            $this->addRule($field, new Rule\Required())
+                ->setMessage('To pole nie może być puste');
+            $this->addRule($field, new Rule\MinLength(3))
+                ->setMessage('Wartość tego pola nie może być krótsza niż 3');
+            $this->addRule($field, new Rule\MaxLength(25))
+                ->setMessage('Wartość tego pola nie może być dłuższa niż 25');
         }
 
         $this->addRule('password_old', new PasswordOld());
         $this->addRule('password1', new PasswordNotOld());
-        $this->addRule('password2', new Rule\Equal($request->getParam('password1')))->setMessage('Błędnie powtórzono hasło');
+        $this->addRule('password2', new Rule\Equal($request->getParam('password1')))
+            ->setMessage('Błędnie powtórzono hasło');
 
         return $this->validate();
     }
