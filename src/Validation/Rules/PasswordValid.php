@@ -29,7 +29,7 @@ class PasswordValid implements RuleInterface
         }
         
         if (password_verify($value, $user->password)) {
-                    return true;
+            return true;
         }
 
         return false;
