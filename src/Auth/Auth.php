@@ -20,8 +20,9 @@ class Auth
     {
         $user = User::where('email', $email)->first();
 
-        if (!$user)
+        if (!$user) {
             return false;
+        }
 
         if (password_verify($password, $user->password))
         {
